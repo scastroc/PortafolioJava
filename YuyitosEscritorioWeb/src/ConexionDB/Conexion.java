@@ -11,6 +11,7 @@ import java.sql.Connection;
  */
 public class Conexion {
     
+        
     public Connection getConnection(DatosConexion datosDB) throws SQLException {
         Connection conDB = null;
         try {

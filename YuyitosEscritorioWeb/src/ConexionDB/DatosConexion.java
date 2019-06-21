@@ -7,7 +7,7 @@ package ConexionDB;
  */
 public class DatosConexion {
     
-    String usuario="yuyitosdb";
+    String usuario="portafolio";
     String contraseña ="123456";
     String driver = "jdbc:oracle:thin:@localhost:1521:XE";
     String Clase = "oracle.jdbc.OracleDriver";
