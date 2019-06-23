@@ -9,6 +9,6 @@ package Controlador;
  *
  * @author Sebastian
  */
-public class CtrlTrabajador {
+public class CntrlTrabajador {
     
 }
