@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package Vista;
 
 import ConexionDB.Conexion;
@@ -70,7 +66,6 @@ public class HomeAdmin extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(1124, 800));
         setSize(new java.awt.Dimension(1100, 800));
 
         jPanelNavegacion.setBackground(new java.awt.Color(204, 204, 204));
@@ -106,10 +101,12 @@ public class HomeAdmin extends javax.swing.JFrame {
         btn_usuarios.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         btn_usuarios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/usuario-icono.png"))); // NOI18N
         btn_usuarios.setText("Usuarios");
+        btn_usuarios.setIconTextGap(8);
 
         btn_pedidos.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         btn_pedidos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/pedidos-icono.png"))); // NOI18N
         btn_pedidos.setText("Pedidos");
+        btn_pedidos.setIconTextGap(8);
         btn_pedidos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_pedidosActionPerformed(evt);
@@ -119,6 +116,7 @@ public class HomeAdmin extends javax.swing.JFrame {
         btn_productos.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         btn_productos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/productos-icono.png"))); // NOI18N
         btn_productos.setText("Productos");
+        btn_productos.setIconTextGap(9);
         btn_productos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_productosActionPerformed(evt);
@@ -162,9 +160,9 @@ public class HomeAdmin extends javax.swing.JFrame {
         jPanelNavegacionLayout.setVerticalGroup(
             jPanelNavegacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelNavegacionLayout.createSequentialGroup()
-                .addGap(16, 16, 16)
+                .addGap(30, 30, 30)
                 .addComponent(LogoYuyitos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(68, 68, 68)
+                .addGap(54, 54, 54)
                 .addComponent(btn_trabajadores, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btn_usuarios, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -172,9 +170,9 @@ public class HomeAdmin extends javax.swing.JFrame {
                 .addComponent(btn_pedidos, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btn_productos, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(55, 55, 55)
+                .addGap(69, 69, 69)
                 .addComponent(btn_cerrar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(104, Short.MAX_VALUE))
+                .addContainerGap(90, Short.MAX_VALUE))
         );
 
         pnl_principal.setPreferredSize(new java.awt.Dimension(827, 600));
@@ -271,10 +269,8 @@ public class HomeAdmin extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_trabajadoresActionPerformed
 
     private void btn_cerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cerrarActionPerformed
-        // TODO add your handling code here:
-        this.dispose();
-        
-        
+        // TODO add your handling code here:        
+        this.dispose(); 
         Login login = new Login();
         login.setVisible(true);
     }//GEN-LAST:event_btn_cerrarActionPerformed

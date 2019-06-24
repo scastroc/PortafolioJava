@@ -262,7 +262,7 @@ public class Login extends javax.swing.JFrame {
         
         String user = txt_user.getText();
         String pass = txt_password.getText();
-        int rol = rol_persona;
+        //int rol = rol_persona;
         
 
         if (Validar_usuario(user, pass) == true && rol_persona == 1) {
@@ -280,8 +280,11 @@ public class Login extends javax.swing.JFrame {
                 
             }else{
                 if(Validar_usuario(user, pass) == true && rol_persona == 2){
+                    
                     JOptionPane.showMessageDialog(null, "Usuario no Autorizado");
+                    
                 }else{
+                    
                     JOptionPane.showMessageDialog(null, "Usuario no Existe");
                 }
             }

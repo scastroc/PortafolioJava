@@ -28,47 +28,156 @@ public class HomeProveedor extends javax.swing.JFrame {
     private void initComponents() {
 
         labelBackgroundTitle1 = new org.edisoncor.gui.label.LabelBackgroundTitle();
-        panel1 = new org.edisoncor.gui.panel.Panel();
-        jLabel1 = new javax.swing.JLabel();
+        pnl_trasero = new org.edisoncor.gui.panel.Panel();
+        jPanelNavegacion = new javax.swing.JPanel();
+        LogoYuyitos = new org.edisoncor.gui.panel.PanelImage();
+        btn_pedidos = new javax.swing.JButton();
+        btn_productos = new javax.swing.JButton();
+        btn_cerrar = new javax.swing.JButton();
+        pnl_principal = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(1100, 800));
+        setSize(new java.awt.Dimension(1100, 800));
 
-        panel1.setColorPrimario(new java.awt.Color(255, 255, 255));
-        panel1.setColorSecundario(new java.awt.Color(255, 255, 255));
+        pnl_trasero.setBackground(new java.awt.Color(204, 204, 204));
+        pnl_trasero.setColorPrimario(new java.awt.Color(255, 255, 255));
+        pnl_trasero.setColorSecundario(new java.awt.Color(255, 255, 255));
 
-        jLabel1.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
-        jLabel1.setText("Proveedor");
+        jPanelNavegacion.setBackground(new java.awt.Color(204, 204, 204));
 
-        javax.swing.GroupLayout panel1Layout = new javax.swing.GroupLayout(panel1);
-        panel1.setLayout(panel1Layout);
-        panel1Layout.setHorizontalGroup(
-            panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panel1Layout.createSequentialGroup()
-                .addGap(139, 139, 139)
-                .addComponent(jLabel1)
-                .addContainerGap(143, Short.MAX_VALUE))
+        LogoYuyitos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Imagenes/YUYITOS3.png"))); // NOI18N
+
+        javax.swing.GroupLayout LogoYuyitosLayout = new javax.swing.GroupLayout(LogoYuyitos);
+        LogoYuyitos.setLayout(LogoYuyitosLayout);
+        LogoYuyitosLayout.setHorizontalGroup(
+            LogoYuyitosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
-        panel1Layout.setVerticalGroup(
-            panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panel1Layout.createSequentialGroup()
-                .addGap(114, 114, 114)
-                .addComponent(jLabel1)
-                .addContainerGap(154, Short.MAX_VALUE))
+        LogoYuyitosLayout.setVerticalGroup(
+            LogoYuyitosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 157, Short.MAX_VALUE)
+        );
+
+        btn_pedidos.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        btn_pedidos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/pedidos-icono.png"))); // NOI18N
+        btn_pedidos.setText("Pedidos");
+        btn_pedidos.setIconTextGap(8);
+        btn_pedidos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_pedidosActionPerformed(evt);
+            }
+        });
+
+        btn_productos.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        btn_productos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/productos-icono.png"))); // NOI18N
+        btn_productos.setText("Productos");
+        btn_productos.setIconTextGap(9);
+        btn_productos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_productosActionPerformed(evt);
+            }
+        });
+
+        btn_cerrar.setBackground(new java.awt.Color(255, 255, 255));
+        btn_cerrar.setForeground(new java.awt.Color(255, 255, 255));
+        btn_cerrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/salir-icono1.png"))); // NOI18N
+        btn_cerrar.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        btn_cerrar.setBorderPainted(false);
+        btn_cerrar.setContentAreaFilled(false);
+        btn_cerrar.setDefaultCapable(false);
+        btn_cerrar.setFocusPainted(false);
+        btn_cerrar.setPreferredSize(new java.awt.Dimension(96, 96));
+        btn_cerrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_cerrarActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanelNavegacionLayout = new javax.swing.GroupLayout(jPanelNavegacion);
+        jPanelNavegacion.setLayout(jPanelNavegacionLayout);
+        jPanelNavegacionLayout.setHorizontalGroup(
+            jPanelNavegacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelNavegacionLayout.createSequentialGroup()
+                .addGap(55, 55, 55)
+                .addGroup(jPanelNavegacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(LogoYuyitos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btn_pedidos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btn_productos, javax.swing.GroupLayout.DEFAULT_SIZE, 163, Short.MAX_VALUE))
+                .addContainerGap(52, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelNavegacionLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btn_cerrar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(86, 86, 86))
+        );
+        jPanelNavegacionLayout.setVerticalGroup(
+            jPanelNavegacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelNavegacionLayout.createSequentialGroup()
+                .addContainerGap(30, Short.MAX_VALUE)
+                .addComponent(LogoYuyitos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(95, 95, 95)
+                .addComponent(btn_productos, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(51, 51, 51)
+                .addComponent(btn_pedidos, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(177, 177, 177)
+                .addComponent(btn_cerrar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(90, 90, 90))
+        );
+
+        javax.swing.GroupLayout pnl_principalLayout = new javax.swing.GroupLayout(pnl_principal);
+        pnl_principal.setLayout(pnl_principalLayout);
+        pnl_principalLayout.setHorizontalGroup(
+            pnl_principalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 841, Short.MAX_VALUE)
+        );
+        pnl_principalLayout.setVerticalGroup(
+            pnl_principalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout pnl_traseroLayout = new javax.swing.GroupLayout(pnl_trasero);
+        pnl_trasero.setLayout(pnl_traseroLayout);
+        pnl_traseroLayout.setHorizontalGroup(
+            pnl_traseroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnl_traseroLayout.createSequentialGroup()
+                .addComponent(jPanelNavegacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(pnl_principal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        pnl_traseroLayout.setVerticalGroup(
+            pnl_traseroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanelNavegacion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(pnl_principal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(pnl_trasero, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(pnl_trasero, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btn_pedidosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_pedidosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_pedidosActionPerformed
+
+    private void btn_productosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_productosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_productosActionPerformed
+
+    private void btn_cerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cerrarActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+        Login login = new Login();
+        login.setVisible(true);
+    }//GEN-LAST:event_btn_cerrarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -106,8 +215,13 @@ public class HomeProveedor extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
+    private org.edisoncor.gui.panel.PanelImage LogoYuyitos;
+    private javax.swing.JButton btn_cerrar;
+    private javax.swing.JButton btn_pedidos;
+    private javax.swing.JButton btn_productos;
+    private javax.swing.JPanel jPanelNavegacion;
     private org.edisoncor.gui.label.LabelBackgroundTitle labelBackgroundTitle1;
-    private org.edisoncor.gui.panel.Panel panel1;
+    private javax.swing.JPanel pnl_principal;
+    private org.edisoncor.gui.panel.Panel pnl_trasero;
     // End of variables declaration//GEN-END:variables
 }
