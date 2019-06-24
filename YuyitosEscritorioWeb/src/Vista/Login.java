@@ -19,6 +19,7 @@ public class Login extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
         rol_persona = 0;
+        
     }
 
     /**
