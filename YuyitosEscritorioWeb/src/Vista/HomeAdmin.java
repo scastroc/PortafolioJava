@@ -5,6 +5,21 @@
  */
 package Vista;
 
+import ConexionDB.Conexion;
+import ConexionDB.DatosConexion;
+import java.sql.Connection;
+import java.util.Vector;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
+import java.sql.SQLException;
+import java.sql.ResultSetMetaData;
+import javax.swing.JOptionPane;
+import java.sql.CallableStatement;
+import javax.swing.JComboBox;
+import Controlador.CtrlTrabajador;
+import Controlador.CtrlUsuario;
+import java.sql.ResultSet;
+
 /**
  *
  * @author Sebastian
@@ -15,8 +30,22 @@ public class HomeAdmin extends javax.swing.JFrame {
      * Creates new form Home
      */
     public HomeAdmin() {
+        
         initComponents();
         this.setLocationRelativeTo(null);
+        OcultarPaneles();
+        pnl_principal.setVisible(true);
+        
+        
+    }
+    
+    public void OcultarPaneles(){
+        
+        pnl_principal.setVisible(false);
+        pnl_trabajador.setVisible(false);
+        
+        
+        
     }
 
     /**
@@ -34,13 +63,20 @@ public class HomeAdmin extends javax.swing.JFrame {
         btn_usuarios = new javax.swing.JButton();
         btn_pedidos = new javax.swing.JButton();
         btn_productos = new javax.swing.JButton();
+        btn_cerrar = new javax.swing.JButton();
+        pnl_principal = new javax.swing.JPanel();
+        lbl_titulo = new javax.swing.JLabel();
+        pnl_trabajador = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setSize(new java.awt.Dimension(1000, 680));
+        setPreferredSize(new java.awt.Dimension(1124, 800));
+        setSize(new java.awt.Dimension(1100, 800));
 
         jPanelNavegacion.setBackground(new java.awt.Color(204, 204, 204));
+        jPanelNavegacion.setPreferredSize(new java.awt.Dimension(270, 790));
 
-        LogoYuyitos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Imagenes/YUYITOS1.png"))); // NOI18N
+        LogoYuyitos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Imagenes/YUYITOS3.png"))); // NOI18N
 
         javax.swing.GroupLayout LogoYuyitosLayout = new javax.swing.GroupLayout(LogoYuyitos);
         LogoYuyitos.setLayout(LogoYuyitosLayout);
@@ -57,6 +93,10 @@ public class HomeAdmin extends javax.swing.JFrame {
         btn_trabajadores.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/trabajador-icono.png"))); // NOI18N
         btn_trabajadores.setText("Trabajadores");
         btn_trabajadores.setAutoscrolls(true);
+        btn_trabajadores.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_trabajadores.setDefaultCapable(false);
+        btn_trabajadores.setFocusPainted(false);
+        btn_trabajadores.setIconTextGap(9);
         btn_trabajadores.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_trabajadoresActionPerformed(evt);
@@ -85,19 +125,39 @@ public class HomeAdmin extends javax.swing.JFrame {
             }
         });
 
+        btn_cerrar.setBackground(new java.awt.Color(255, 255, 255));
+        btn_cerrar.setForeground(new java.awt.Color(255, 255, 255));
+        btn_cerrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/salir-icono1.png"))); // NOI18N
+        btn_cerrar.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        btn_cerrar.setBorderPainted(false);
+        btn_cerrar.setContentAreaFilled(false);
+        btn_cerrar.setDefaultCapable(false);
+        btn_cerrar.setFocusPainted(false);
+        btn_cerrar.setPreferredSize(new java.awt.Dimension(96, 96));
+        btn_cerrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_cerrarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanelNavegacionLayout = new javax.swing.GroupLayout(jPanelNavegacion);
         jPanelNavegacion.setLayout(jPanelNavegacionLayout);
         jPanelNavegacionLayout.setHorizontalGroup(
             jPanelNavegacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelNavegacionLayout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addGroup(jPanelNavegacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(LogoYuyitos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btn_trabajadores, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btn_usuarios, javax.swing.GroupLayout.DEFAULT_SIZE, 162, Short.MAX_VALUE)
-                    .addComponent(btn_pedidos, javax.swing.GroupLayout.DEFAULT_SIZE, 162, Short.MAX_VALUE)
-                    .addComponent(btn_productos, javax.swing.GroupLayout.DEFAULT_SIZE, 162, Short.MAX_VALUE))
-                .addContainerGap(30, Short.MAX_VALUE))
+                .addGroup(jPanelNavegacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanelNavegacionLayout.createSequentialGroup()
+                        .addGap(55, 55, 55)
+                        .addGroup(jPanelNavegacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(LogoYuyitos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btn_trabajadores, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btn_usuarios, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btn_pedidos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btn_productos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(jPanelNavegacionLayout.createSequentialGroup()
+                        .addGap(81, 81, 81)
+                        .addComponent(btn_cerrar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(52, Short.MAX_VALUE))
         );
         jPanelNavegacionLayout.setVerticalGroup(
             jPanelNavegacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -112,7 +172,53 @@ public class HomeAdmin extends javax.swing.JFrame {
                 .addComponent(btn_pedidos, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btn_productos, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(145, Short.MAX_VALUE))
+                .addGap(55, 55, 55)
+                .addComponent(btn_cerrar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(104, Short.MAX_VALUE))
+        );
+
+        pnl_principal.setPreferredSize(new java.awt.Dimension(827, 600));
+
+        lbl_titulo.setFont(new java.awt.Font("SansSerif", 1, 24)); // NOI18N
+        lbl_titulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbl_titulo.setText("Panel Principal");
+
+        javax.swing.GroupLayout pnl_principalLayout = new javax.swing.GroupLayout(pnl_principal);
+        pnl_principal.setLayout(pnl_principalLayout);
+        pnl_principalLayout.setHorizontalGroup(
+            pnl_principalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnl_principalLayout.createSequentialGroup()
+                .addGap(6, 6, 6)
+                .addComponent(lbl_titulo, javax.swing.GroupLayout.DEFAULT_SIZE, 762, Short.MAX_VALUE)
+                .addGap(6, 6, 6))
+        );
+        pnl_principalLayout.setVerticalGroup(
+            pnl_principalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnl_principalLayout.createSequentialGroup()
+                .addGap(69, 69, 69)
+                .addComponent(lbl_titulo)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jLabel1.setFont(new java.awt.Font("SansSerif", 1, 24)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Panel Trabajadores");
+
+        javax.swing.GroupLayout pnl_trabajadorLayout = new javax.swing.GroupLayout(pnl_trabajador);
+        pnl_trabajador.setLayout(pnl_trabajadorLayout);
+        pnl_trabajadorLayout.setHorizontalGroup(
+            pnl_trabajadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnl_trabajadorLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 778, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        pnl_trabajadorLayout.setVerticalGroup(
+            pnl_trabajadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnl_trabajadorLayout.createSequentialGroup()
+                .addGap(80, 80, 80)
+                .addComponent(jLabel1)
+                .addContainerGap(534, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -121,11 +227,29 @@ public class HomeAdmin extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanelNavegacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 851, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 74, Short.MAX_VALUE)
+                .addComponent(pnl_principal, javax.swing.GroupLayout.PREFERRED_SIZE, 774, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(298, 298, 298)
+                    .addComponent(pnl_trabajador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(36, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanelNavegacion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(pnl_principal, javax.swing.GroupLayout.DEFAULT_SIZE, 788, Short.MAX_VALUE)
+                .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanelNavegacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 10, Short.MAX_VALUE))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(pnl_trabajador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(148, Short.MAX_VALUE)))
         );
 
         pack();
@@ -141,7 +265,19 @@ public class HomeAdmin extends javax.swing.JFrame {
 
     private void btn_trabajadoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_trabajadoresActionPerformed
         // TODO add your handling code here:
+        OcultarPaneles();
+        pnl_trabajador.setVisible(true);
+        
     }//GEN-LAST:event_btn_trabajadoresActionPerformed
+
+    private void btn_cerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cerrarActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+        
+        
+        Login login = new Login();
+        login.setVisible(true);
+    }//GEN-LAST:event_btn_cerrarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -181,10 +317,15 @@ public class HomeAdmin extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private org.edisoncor.gui.panel.PanelImage LogoYuyitos;
+    private javax.swing.JButton btn_cerrar;
     private javax.swing.JButton btn_pedidos;
     private javax.swing.JButton btn_productos;
     private javax.swing.JButton btn_trabajadores;
     private javax.swing.JButton btn_usuarios;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanelNavegacion;
+    private javax.swing.JLabel lbl_titulo;
+    private javax.swing.JPanel pnl_principal;
+    private javax.swing.JPanel pnl_trabajador;
     // End of variables declaration//GEN-END:variables
 }
