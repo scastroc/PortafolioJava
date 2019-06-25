@@ -27,24 +27,18 @@ public class HomeProveedor extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        labelBackgroundTitle1 = new org.edisoncor.gui.label.LabelBackgroundTitle();
-        pnl_trasero = new org.edisoncor.gui.panel.Panel();
         jPanelNavegacion = new javax.swing.JPanel();
         LogoYuyitos = new org.edisoncor.gui.panel.PanelImage();
-        btn_pedidos = new javax.swing.JButton();
-        btn_productos = new javax.swing.JButton();
+        btn_provePedidos = new javax.swing.JButton();
+        btn_proveProductos = new javax.swing.JButton();
         btn_cerrar = new javax.swing.JButton();
         pnl_principal = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(1100, 800));
         setSize(new java.awt.Dimension(1100, 800));
 
-        pnl_trasero.setBackground(new java.awt.Color(204, 204, 204));
-        pnl_trasero.setColorPrimario(new java.awt.Color(255, 255, 255));
-        pnl_trasero.setColorSecundario(new java.awt.Color(255, 255, 255));
-
         jPanelNavegacion.setBackground(new java.awt.Color(204, 204, 204));
+        jPanelNavegacion.setPreferredSize(new java.awt.Dimension(270, 800));
 
         LogoYuyitos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Imagenes/YUYITOS3.png"))); // NOI18N
 
@@ -59,23 +53,23 @@ public class HomeProveedor extends javax.swing.JFrame {
             .addGap(0, 157, Short.MAX_VALUE)
         );
 
-        btn_pedidos.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
-        btn_pedidos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/pedidos-icono.png"))); // NOI18N
-        btn_pedidos.setText("Pedidos");
-        btn_pedidos.setIconTextGap(8);
-        btn_pedidos.addActionListener(new java.awt.event.ActionListener() {
+        btn_provePedidos.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        btn_provePedidos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/pedidos-icono.png"))); // NOI18N
+        btn_provePedidos.setText("Pedidos");
+        btn_provePedidos.setIconTextGap(8);
+        btn_provePedidos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_pedidosActionPerformed(evt);
+                btn_provePedidosActionPerformed(evt);
             }
         });
 
-        btn_productos.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
-        btn_productos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/productos-icono.png"))); // NOI18N
-        btn_productos.setText("Productos");
-        btn_productos.setIconTextGap(9);
-        btn_productos.addActionListener(new java.awt.event.ActionListener() {
+        btn_proveProductos.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        btn_proveProductos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/productos-icono.png"))); // NOI18N
+        btn_proveProductos.setText("Productos");
+        btn_proveProductos.setIconTextGap(9);
+        btn_proveProductos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_productosActionPerformed(evt);
+                btn_proveProductosActionPerformed(evt);
             }
         });
 
@@ -102,8 +96,8 @@ public class HomeProveedor extends javax.swing.JFrame {
                 .addGap(55, 55, 55)
                 .addGroup(jPanelNavegacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(LogoYuyitos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btn_pedidos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btn_productos, javax.swing.GroupLayout.DEFAULT_SIZE, 163, Short.MAX_VALUE))
+                    .addComponent(btn_provePedidos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btn_proveProductos, javax.swing.GroupLayout.DEFAULT_SIZE, 163, Short.MAX_VALUE))
                 .addContainerGap(52, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelNavegacionLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -113,12 +107,12 @@ public class HomeProveedor extends javax.swing.JFrame {
         jPanelNavegacionLayout.setVerticalGroup(
             jPanelNavegacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelNavegacionLayout.createSequentialGroup()
-                .addContainerGap(30, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(LogoYuyitos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(95, 95, 95)
-                .addComponent(btn_productos, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btn_proveProductos, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(51, 51, 51)
-                .addComponent(btn_pedidos, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btn_provePedidos, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(177, 177, 177)
                 .addComponent(btn_cerrar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(90, 90, 90))
@@ -128,49 +122,42 @@ public class HomeProveedor extends javax.swing.JFrame {
         pnl_principal.setLayout(pnl_principalLayout);
         pnl_principalLayout.setHorizontalGroup(
             pnl_principalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 841, Short.MAX_VALUE)
+            .addGap(0, 973, Short.MAX_VALUE)
         );
         pnl_principalLayout.setVerticalGroup(
             pnl_principalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-
-        javax.swing.GroupLayout pnl_traseroLayout = new javax.swing.GroupLayout(pnl_trasero);
-        pnl_trasero.setLayout(pnl_traseroLayout);
-        pnl_traseroLayout.setHorizontalGroup(
-            pnl_traseroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnl_traseroLayout.createSequentialGroup()
-                .addComponent(jPanelNavegacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(pnl_principal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-        pnl_traseroLayout.setVerticalGroup(
-            pnl_traseroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanelNavegacion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(pnl_principal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGap(0, 800, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pnl_trasero, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanelNavegacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(pnl_principal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pnl_trasero, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(pnl_principal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+            .addComponent(jPanelNavegacion, javax.swing.GroupLayout.DEFAULT_SIZE, 812, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btn_pedidosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_pedidosActionPerformed
+    private void btn_provePedidosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_provePedidosActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btn_pedidosActionPerformed
+    }//GEN-LAST:event_btn_provePedidosActionPerformed
 
-    private void btn_productosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_productosActionPerformed
+    private void btn_proveProductosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_proveProductosActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btn_productosActionPerformed
+    }//GEN-LAST:event_btn_proveProductosActionPerformed
 
     private void btn_cerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cerrarActionPerformed
         // TODO add your handling code here:
@@ -217,11 +204,9 @@ public class HomeProveedor extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private org.edisoncor.gui.panel.PanelImage LogoYuyitos;
     private javax.swing.JButton btn_cerrar;
-    private javax.swing.JButton btn_pedidos;
-    private javax.swing.JButton btn_productos;
+    private javax.swing.JButton btn_provePedidos;
+    private javax.swing.JButton btn_proveProductos;
     private javax.swing.JPanel jPanelNavegacion;
-    private org.edisoncor.gui.label.LabelBackgroundTitle labelBackgroundTitle1;
     private javax.swing.JPanel pnl_principal;
-    private org.edisoncor.gui.panel.Panel pnl_trasero;
     // End of variables declaration//GEN-END:variables
 }

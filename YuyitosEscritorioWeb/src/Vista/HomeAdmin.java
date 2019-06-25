@@ -64,6 +64,10 @@ public class HomeAdmin extends javax.swing.JFrame {
         lbl_titulo = new javax.swing.JLabel();
         pnl_trabajador = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        btn_agregarTrabajador = new javax.swing.JButton();
+        btn_modificarTrabajador = new javax.swing.JButton();
+        btn_eliminarTrabajador = new javax.swing.JButton();
+        btn_listarTrabajador = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setSize(new java.awt.Dimension(1100, 800));
@@ -198,25 +202,92 @@ public class HomeAdmin extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jLabel1.setFont(new java.awt.Font("SansSerif", 1, 24)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("SansSerif", 1, 36)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Panel Trabajadores");
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/trabajadores-chico.png"))); // NOI18N
+        jLabel1.setText("Trabajadores");
+
+        btn_agregarTrabajador.setFont(new java.awt.Font("SansSerif", 2, 18)); // NOI18N
+        btn_agregarTrabajador.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/trabajador-agregar.png"))); // NOI18N
+        btn_agregarTrabajador.setText("Agregar");
+        btn_agregarTrabajador.setIconTextGap(8);
+        btn_agregarTrabajador.setPreferredSize(new java.awt.Dimension(190, 90));
+        btn_agregarTrabajador.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_agregarTrabajadorActionPerformed(evt);
+            }
+        });
+
+        btn_modificarTrabajador.setFont(new java.awt.Font("SansSerif", 2, 18)); // NOI18N
+        btn_modificarTrabajador.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/trabajador-modificar.png"))); // NOI18N
+        btn_modificarTrabajador.setText("Modificar");
+        btn_modificarTrabajador.setIconTextGap(8);
+        btn_modificarTrabajador.setPreferredSize(new java.awt.Dimension(190, 90));
+        btn_modificarTrabajador.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_modificarTrabajadorActionPerformed(evt);
+            }
+        });
+
+        btn_eliminarTrabajador.setFont(new java.awt.Font("SansSerif", 2, 18)); // NOI18N
+        btn_eliminarTrabajador.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/trabajador-eliminar.png"))); // NOI18N
+        btn_eliminarTrabajador.setText("Eliminar");
+        btn_eliminarTrabajador.setIconTextGap(8);
+        btn_eliminarTrabajador.setPreferredSize(new java.awt.Dimension(190, 90));
+        btn_eliminarTrabajador.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_eliminarTrabajadorActionPerformed(evt);
+            }
+        });
+
+        btn_listarTrabajador.setFont(new java.awt.Font("SansSerif", 2, 18)); // NOI18N
+        btn_listarTrabajador.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Iconos/trabajador-listar.png"))); // NOI18N
+        btn_listarTrabajador.setText("Listar");
+        btn_listarTrabajador.setIconTextGap(8);
+        btn_listarTrabajador.setPreferredSize(new java.awt.Dimension(190, 90));
+        btn_listarTrabajador.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_listarTrabajadorActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout pnl_trabajadorLayout = new javax.swing.GroupLayout(pnl_trabajador);
         pnl_trabajador.setLayout(pnl_trabajadorLayout);
         pnl_trabajadorLayout.setHorizontalGroup(
             pnl_trabajadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnl_trabajadorLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 778, Short.MAX_VALUE)
-                .addContainerGap())
+                .addGroup(pnl_trabajadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addGroup(pnl_trabajadorLayout.createSequentialGroup()
+                        .addGap(231, 231, 231)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 328, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(75, 75, 75))
+                    .addGroup(pnl_trabajadorLayout.createSequentialGroup()
+                        .addGap(148, 148, 148)
+                        .addGroup(pnl_trabajadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(pnl_trabajadorLayout.createSequentialGroup()
+                                .addComponent(btn_listarTrabajador, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btn_eliminarTrabajador, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(pnl_trabajadorLayout.createSequentialGroup()
+                                .addComponent(btn_agregarTrabajador, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btn_modificarTrabajador, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(140, Short.MAX_VALUE))
         );
         pnl_trabajadorLayout.setVerticalGroup(
             pnl_trabajadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnl_trabajadorLayout.createSequentialGroup()
-                .addGap(80, 80, 80)
-                .addComponent(jLabel1)
-                .addContainerGap(534, Short.MAX_VALUE))
+                .addGap(70, 70, 70)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(130, 130, 130)
+                .addGroup(pnl_trabajadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btn_agregarTrabajador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_modificarTrabajador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(51, 51, 51)
+                .addGroup(pnl_trabajadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btn_listarTrabajador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_eliminarTrabajador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(139, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -275,6 +346,22 @@ public class HomeAdmin extends javax.swing.JFrame {
         login.setVisible(true);
     }//GEN-LAST:event_btn_cerrarActionPerformed
 
+    private void btn_agregarTrabajadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_agregarTrabajadorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_agregarTrabajadorActionPerformed
+
+    private void btn_modificarTrabajadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_modificarTrabajadorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_modificarTrabajadorActionPerformed
+
+    private void btn_eliminarTrabajadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_eliminarTrabajadorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_eliminarTrabajadorActionPerformed
+
+    private void btn_listarTrabajadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_listarTrabajadorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_listarTrabajadorActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -313,7 +400,11 @@ public class HomeAdmin extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private org.edisoncor.gui.panel.PanelImage LogoYuyitos;
+    private javax.swing.JButton btn_agregarTrabajador;
     private javax.swing.JButton btn_cerrar;
+    private javax.swing.JButton btn_eliminarTrabajador;
+    private javax.swing.JButton btn_listarTrabajador;
+    private javax.swing.JButton btn_modificarTrabajador;
     private javax.swing.JButton btn_pedidos;
     private javax.swing.JButton btn_productos;
     private javax.swing.JButton btn_trabajadores;
