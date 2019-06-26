@@ -58,6 +58,7 @@ public class CtrlTrabajador {
             cst.setString(13, comuna);
             cst.execute();
             
+                        
             final JDialog dialog = new JDialog();
                 dialog.setAlwaysOnTop(true);
                 JOptionPane.showMessageDialog(dialog, "Se agregó Nuevo Trabajador Exitosamente.");
@@ -85,6 +86,7 @@ public class CtrlTrabajador {
             cst.registerOutParameter(2, java.sql.Types.VARCHAR);
             cst.execute();
             
+                        
             final JDialog dialog = new JDialog();
                 dialog.setAlwaysOnTop(true);
                 JOptionPane.showMessageDialog(dialog, "Se elimino Trabajador Exitosamente.");            
@@ -109,12 +111,15 @@ public class CtrlTrabajador {
             cst.execute();
             res = (ResultSet)cst.getObject(1);
             
+                        
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e);
-        }       
+        }
+        
         return res;
+        
     }
     
-    
-    
 }
+    
+    
