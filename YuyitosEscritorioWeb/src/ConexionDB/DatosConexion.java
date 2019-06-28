@@ -7,10 +7,10 @@ package ConexionDB;
  */
 public class DatosConexion {
     
-    String usuario="portafolio";
-    String contraseña ="123456";
-    String driver = "jdbc:oracle:thin:@localhost:1521:XE";
-    String Clase = "oracle.jdbc.OracleDriver";
+    private String usuario="portafolio";
+    private String contraseña ="123456";
+    private String driver = "jdbc:oracle:thin:@localhost:1521:XE";
+    private String Clase = "oracle.jdbc.OracleDriver";
 
     public String getUsuario() {
         return usuario;
