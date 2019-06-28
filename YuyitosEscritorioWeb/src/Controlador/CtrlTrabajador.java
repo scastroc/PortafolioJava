@@ -114,8 +114,7 @@ public class CtrlTrabajador {
                         
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e);
-        }
-        
+        }        
         return res;
         
     }

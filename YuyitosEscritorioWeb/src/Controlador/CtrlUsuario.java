@@ -64,9 +64,91 @@ public class CtrlUsuario {
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e);
         }        
+        return res;       
+    }
+    
+    
+    public static ResultSet ListarUsuarioInactivo(){
+        ResultSet res = null;
+        try {
+            Conexion conexion = new Conexion();
+            DatosConexion cadena = new DatosConexion();
+            Connection conn = (Connection) conexion.getConnection(cadena);
+            
+            CallableStatement cst = conn.prepareCall("{call SP_UsuariosInactivos(?)}");
+            
+            cst.registerOutParameter(1, oracle.jdbc.OracleTypes.CURSOR);
+            cst.execute();
+            res = (ResultSet)cst.getObject(1);            
+            
+                        
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
+        }        
+        return res;       
+    }
+    
+    public static ResultSet ActivarUsuario(String nombre){
+        ResultSet res = null;
+        int userID = 0;
+        try {
+            
+            Conexion conexion = new Conexion();
+            DatosConexion cadena = new DatosConexion();
+            Connection conn = (Connection) conexion.getConnection(cadena);
+            
+            CallableStatement cst = conn.prepareCall("{call SP_activarUsuario(?,?)}");
+            
+            cst.setString(1, nombre);
+            cst.registerOutParameter(2, java.sql.Types.NUMERIC);
+            cst.execute();
+            
+            userID = cst.getInt(2);
+
+            if (userID > 0) {
+
+                final JDialog dialog = new JDialog();
+                dialog.setAlwaysOnTop(true);
+                JOptionPane.showMessageDialog(dialog, "Se Aprobo el usuario: " + nombre);
+
+            }
+            
+            //res = (ResultSet)cst.getObject(1);   
+            
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
+        }
         return res;
-        
-        
+    }
+    
+    public static ResultSet EliminarUsuario(String nombre){
+        ResultSet res = null;
+        int userID = 0;
+        try {
+            
+            Conexion conexion = new Conexion();
+            DatosConexion cadena = new DatosConexion();
+            Connection conn = (Connection) conexion.getConnection(cadena);
+            
+            CallableStatement cst = conn.prepareCall("{call SP_eliminarUsuario(?,?)}");
+            
+            cst.setString(1, nombre);
+            cst.registerOutParameter(2, java.sql.Types.NUMERIC);
+            cst.execute();
+            
+            userID = cst.getInt(2);
+
+            if (userID > 0) {
+
+                final JDialog dialog = new JDialog();
+                dialog.setAlwaysOnTop(true);
+                JOptionPane.showMessageDialog(dialog, "Se Elimino el usuario: " + nombre);
+
+            }           
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
+        }
+        return res;
     }
     
 }
