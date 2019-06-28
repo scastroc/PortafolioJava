@@ -8,22 +8,11 @@ package Controlador;
 import ConexionDB.Conexion;
 import ConexionDB.DatosConexion;
 import java.sql.Connection;
-import java.util.Vector;
-import javax.swing.JTable;
-import javax.swing.table.DefaultTableModel;
-import java.sql.SQLException;
-import java.sql.ResultSetMetaData;
 import javax.swing.JOptionPane;
 import java.sql.CallableStatement;
-import javax.swing.JComboBox;
-import Controlador.CtrlTrabajador;
-import Controlador.CtrlUsuario;
-import java.sql.Statement;
 import java.sql.Date;
 import java.sql.ResultSet;
-import javax.print.DocFlavor;
 import javax.swing.JDialog;
-//import java.util.Date;
 
 /**
  *

@@ -9,6 +9,7 @@ import ConexionDB.Conexion;
 import ConexionDB.DatosConexion;
 import java.sql.CallableStatement;
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.ResultSet;
 import javax.swing.JDialog;
 import javax.swing.JOptionPane;
@@ -78,7 +79,7 @@ public class CtrlProveedor {
           
           try {
               
-              Conexion conexion = new Conexion();
+            Conexion conexion = new Conexion();
             DatosConexion cadena = new DatosConexion();
             Connection conn = (Connection) conexion.getConnection(cadena);
             
@@ -99,6 +100,48 @@ public class CtrlProveedor {
           return res;
           
       }
+      
+      public static ResultSet AgregarProductosProveedor(int  precio, Date fechaIngreso, String rutProv, String nomProd ){
+        ResultSet res = null;
+        
+        try {
+            
+            Conexion conexion = new Conexion();
+            DatosConexion cadena = new DatosConexion();
+            Connection conn = (Connection) conexion.getConnection(cadena);
+            
+            CallableStatement cst = conn.prepareCall("{call SP_insertProdProveedor(?,?,?,?)}");
+            
+            cst.setInt(1, precio);
+            cst.setDate(2, fechaIngreso);
+            cst.setString(3, rutProv);
+            cst.setString(4, nomProd);
+            cst.execute();            
+            
+        } catch (Exception e) {
+        }
+        return res;
+    }
+      
+      public static ResultSet ListarProductoProveedor(){
+        ResultSet res = null;
+        try {
+            Conexion conexion = new Conexion();
+            DatosConexion cadena = new DatosConexion();
+            Connection conn = (Connection) conexion.getConnection(cadena);
+            
+            CallableStatement cst = conn.prepareCall("{call SP_tablaProductosProveedor(?)}");
+            
+            cst.registerOutParameter(1, oracle.jdbc.OracleTypes.CURSOR);
+            cst.execute();
+            res = (ResultSet)cst.getObject(1);            
+            
+                        
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
+        }        
+        return res;       
+    }
     
       
       
